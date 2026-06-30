@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Accompany — A helping hand when family is far away</title>
+<meta name="description" content="Namma Chennai's dedicated companion service for senior citizens. Trusted Sakhas & Sakhis for travel, temple visits, doctor consultations, and everyday companionship. Real visits. Real smiles. Real Sambandh." />
+<link rel="icon" href="images/logo.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   ACCOMPANY — warm editorial heritage
+   Palette drawn from the brand logo: deep teal, terracotta heart,
+   sage laurel, marigold, on warm parchment.
+   ============================================================ */
+:root{
+  --parchment:      #F4ECDA;
+  --parchment-2:    #EDE2CB;
+  --parchment-3:    #E6D8BC;
+  --teal:           #285257;
+  --teal-deep:      #1B383C;
+  --teal-ink:       #14292C;
+  --terracotta:     #C56347;
+  --terracotta-2:   #D88B68;
+  --olive:          #7C8A4C;
+  --olive-deep:     #5C6A38;
+  --marigold:       #DDA02E;
+  --marigold-deep:  #C2851A;
+  --ink:            #2B2118;
+  --ink-soft:       #5A4C3C;
+  --ink-faint:      #877560;
+  --line:           rgba(43,33,24,.16);
+  --line-soft:      rgba(43,33,24,.09);
+
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:  'Hanken Grotesk', system-ui, sans-serif;
+
+  --maxw: 1240px;
+  --gutter: clamp(20px, 5vw, 72px);
+  --r: 18px;
+  --shadow: 0 2px 4px rgba(27,56,60,.05), 0 18px 40px -22px rgba(27,56,60,.35);
+  --shadow-lift: 0 4px 8px rgba(27,56,60,.08), 0 36px 70px -30px rgba(27,56,60,.45);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip;max-width:100%}
+body{
+  font-family:var(--sans);
+  background:var(--parchment);
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(1200px 700px at 12% -8%, rgba(221,160,46,.10), transparent 60%),
+    radial-gradient(1100px 800px at 110% 12%, rgba(124,138,76,.10), transparent 55%),
+    radial-gradient(900px 900px at 50% 120%, rgba(197,99,71,.08), transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--marigold);color:var(--teal-ink)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ---------- type ---------- */
+.eyebrow{
+  font-family:var(--sans);font-weight:600;font-size:.78rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);
+  display:inline-flex;align-items:center;gap:.7em;
+}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--terracotta);display:inline-block}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{content:"";width:26px;height:1.5px;background:var(--terracotta);display:inline-block}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-.015em}
+.h-script{font-style:italic;font-weight:300}
+.devnagri{font-family:var(--serif);font-style:italic}
+
+p{max-width:64ch}
+.lead{font-size:clamp(1.12rem,1.6vw,1.35rem);color:var(--ink-soft);line-height:1.6}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--sans);font-weight:600;font-size:1rem;
+  padding:.95em 1.6em;border-radius:999px;cursor:pointer;border:1.5px solid transparent;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s, background .25s, color .25s;
+  letter-spacing:.01em;line-height:1;
+}
+.btn svg{width:1.15em;height:1.15em}
+.btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 12px 26px -12px rgba(197,99,71,.8)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px -12px rgba(197,99,71,.9);background:#b5573d}
+.btn-teal{background:var(--teal);color:var(--parchment)}
+.btn-teal:hover{transform:translateY(-3px);background:var(--teal-deep);box-shadow:var(--shadow)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.35)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--teal);color:var(--teal)}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-head{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  transition:background .4s, box-shadow .4s, padding .4s;
+  padding:14px 0;
+}
+.site-head.scrolled{
+  background:rgba(244,236,218,.86);backdrop-filter:blur(14px) saturate(1.2);
+  box-shadow:0 1px 0 var(--line-soft), 0 10px 30px -24px rgba(27,56,60,.6);
+  padding:8px 0;
+}
+.head-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0}
+.brand-badge{
+  width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:var(--teal);box-shadow:0 0 0 1.5px rgba(43,33,24,.12), inset 0 0 0 3px rgba(244,236,218,.25);
+  transition:width .4s,height .4s;
+}
+.brand-badge img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+.site-head.scrolled .brand-badge{width:42px;height:42px}
+.brand-name{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:-.01em;line-height:1}
+.brand-name small{display:block;font-family:var(--sans);font-weight:500;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-top:3px}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{
+  font-family:var(--sans);font-weight:500;font-size:.95rem;color:var(--ink-soft);
+  padding:.5em .85em;border-radius:999px;transition:color .2s,background .2s;
+}
+.nav a:hover{color:var(--teal);background:rgba(40,82,87,.07)}
+.head-cta{display:flex;align-items:center;gap:10px}
+.nav-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:12px;width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.nav-toggle span{width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;padding:clamp(120px,17vh,180px) 0 clamp(60px,9vh,110px)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero-tag{margin-bottom:26px}
+.hero h1{
+  font-size:clamp(2.7rem,6.4vw,5.4rem);letter-spacing:-.025em;
+  margin-bottom:.5em;color:var(--ink);
+}
+.hero h1 .accent{color:var(--terracotta);font-style:italic;font-weight:300}
+.hero .lead{margin-bottom:14px;max-width:38ch}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--teal);margin-bottom:34px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-trust{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap}
+.hero-trust .t{display:flex;flex-direction:column}
+.hero-trust .t b{font-family:var(--serif);font-size:2rem;line-height:1;color:var(--teal)}
+.hero-trust .t span{font-size:.82rem;color:var(--ink-faint);letter-spacing:.04em;margin-top:6px}
+.hero-trust .div{width:1px;background:var(--line);align-self:stretch}
+
+/* hero medallion */
+.medallion{position:relative;width:100%;max-width:440px;margin-inline:auto;aspect-ratio:1}
+.medallion .ring{
+  position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at 50% 38%, var(--teal) 0%, var(--teal-deep) 78%);
+  box-shadow:var(--shadow-lift), inset 0 0 0 8px rgba(244,236,218,.10);
+}
+.medallion .ring::after{
+  content:"";position:absolute;inset:14px;border-radius:50%;border:1.5px dashed rgba(244,236,218,.32);
+}
+.medallion img{position:absolute;inset:8%;width:84%;height:84%;object-fit:contain}
+.medallion .float{
+  position:absolute;background:var(--parchment);border-radius:14px;padding:11px 16px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;font-size:.84rem;font-weight:600;
+  border:1px solid var(--line-soft);
+}
+.medallion .float .dot{width:9px;height:9px;border-radius:50%;background:var(--olive);box-shadow:0 0 0 4px rgba(124,138,76,.2)}
+.medallion .float.f1{top:6%;right:-6%;animation:bob 5s ease-in-out infinite}
+.medallion .float.f2{bottom:8%;left:-8%;animation:bob 5.6s ease-in-out infinite .6s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* decorative laurel sprig in hero corner */
+.sprig{position:absolute;opacity:.5;color:var(--olive);pointer-events:none}
+.hero .sprig{opacity:.16}
+.hero>.wrap{position:relative;z-index:1}
+
+/* ============================================================
+   MARQUEE STRIP
+   ============================================================ */
+.strip{background:var(--teal-deep);color:var(--parchment);overflow:hidden;border-block:1px solid rgba(0,0,0,.2)}
+.strip-track{display:flex;gap:0;white-space:nowrap;animation:scroll 34s linear infinite;width:max-content}
+.strip-track span{font-family:var(--serif);font-style:italic;font-size:1.5rem;padding:18px 34px;display:inline-flex;align-items:center;gap:34px;opacity:.92}
+.strip-track span::after{content:"❉";color:var(--marigold);font-style:normal;font-size:.9rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   SECTION SCAFFOLD
+   ============================================================ */
+section{position:relative}
+.section{padding:clamp(70px,11vh,140px) 0}
+.section-head{max-width:760px;margin-bottom:clamp(40px,6vw,72px)}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head h2{font-size:clamp(2.1rem,4.6vw,3.6rem);margin:18px 0 0;letter-spacing:-.02em}
+.section-head .lead{margin-top:20px}
+
+/* ---------- manifesto ---------- */
+.manifesto{background:var(--teal);color:var(--parchment);position:relative;overflow:hidden}
+.manifesto .sprig{color:var(--olive);opacity:.22}
+.manifesto-inner{position:relative;text-align:center;max-width:980px;margin-inline:auto}
+.manifesto .eyebrow{color:var(--marigold)}
+.manifesto .eyebrow::before,.manifesto .eyebrow.center::after{background:var(--marigold)}
+.manifesto h2{font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.18;margin:24px 0 0;color:var(--parchment)}
+.manifesto h2 .x{position:relative;white-space:nowrap;color:rgba(244,236,218,.5)}
+.manifesto h2 .x::after{content:"";position:absolute;left:-2px;right:-2px;top:54%;height:2px;background:var(--terracotta-2);transform:rotate(-2deg)}
+.manifesto h2 em{font-style:italic;color:var(--marigold)}
+.manifesto .tagline{margin:30px auto 0;max-width:62ch;text-align:center;font-size:1.05rem;color:rgba(244,236,218,.78);letter-spacing:.02em}
+.manifesto .tagline b{color:var(--parchment);font-weight:600}
+
+/* ---------- value props ---------- */
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.vcard{
+  background:rgba(255,255,255,.5);border:1px solid var(--line-soft);border-radius:var(--r);
+  padding:30px 26px 32px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .35s;
+  position:relative;overflow:hidden;
+}
+.vcard::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--accent,var(--terracotta));transform:scaleY(0);transform-origin:top;transition:transform .4s}
+.vcard:hover{transform:translateY(-7px);box-shadow:var(--shadow-lift);background:#fff}
+.vcard:hover::before{transform:scaleY(1)}
+.vicon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;margin-bottom:22px;color:#fff;background:var(--accent,var(--terracotta))}
+.vicon svg{width:26px;height:26px}
+.vcard h3{font-size:1.4rem;margin-bottom:10px}
+.vcard p{font-size:.96rem;color:var(--ink-soft);line-height:1.55}
+
+/* ---------- services ---------- */
+.services{background:var(--parchment-2)}
+.flagship{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-radius:24px;overflow:hidden;
+  box-shadow:var(--shadow-lift);margin-bottom:34px;background:var(--teal);color:var(--parchment);
+}
+.flagship .copy{padding:clamp(34px,4.5vw,58px)}
+.flagship .badge{display:inline-flex;align-items:center;gap:8px;background:var(--marigold);color:var(--teal-ink);font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:.5em 1em;border-radius:999px;margin-bottom:22px}
+.flagship h3{font-size:clamp(1.8rem,3.2vw,2.7rem);margin-bottom:16px;color:var(--parchment)}
+.flagship p{color:rgba(244,236,218,.82);font-size:1.02rem;margin-bottom:22px}
+.flagship ul{list-style:none;display:grid;gap:14px;margin-bottom:30px}
+.flagship li{display:flex;gap:13px;align-items:flex-start;font-size:.98rem;color:rgba(244,236,218,.9)}
+.flagship li b{color:var(--parchment);font-weight:600}
+.flagship li .tick{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(221,160,46,.2);color:var(--marigold);display:grid;place-items:center;margin-top:1px}
+.flagship li .tick svg{width:13px;height:13px}
+.flagship .visual{position:relative;background:radial-gradient(circle at 50% 35%,var(--teal-deep),var(--teal-ink));display:grid;place-items:center;padding:40px;min-height:320px}
+.flagship .visual img{width:80%;max-width:340px;border-radius:50%;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.flagship .visual .quote{position:absolute;bottom:26px;left:26px;right:26px;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--marigold);text-align:center}
+
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{
+  background:var(--parchment);border:1px solid var(--line-soft);border-radius:var(--r);padding:28px 24px;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;display:flex;flex-direction:column;
+}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift)}
+.svc .emoji{font-size:1.7rem;margin-bottom:14px;line-height:1}
+.svc h4{font-size:1.28rem;margin-bottom:6px}
+.svc .kicker{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--olive-deep);margin-bottom:16px}
+.svc ul{list-style:none;display:grid;gap:9px;margin-bottom:16px}
+.svc li{font-size:.93rem;color:var(--ink-soft);display:flex;gap:9px;align-items:center}
+.svc li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--terracotta-2);flex-shrink:0}
+.svc p{font-size:.86rem;color:var(--ink-faint);font-style:italic;font-family:var(--serif);margin-top:auto;border-top:1px solid var(--line-soft);padding-top:14px}
+
+/* ---------- how it works ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step;position:relative}
+.steps::before{content:"";position:absolute;top:42px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 18px);z-index:0}
+.step{position:relative;z-index:1;text-align:left}
+.step .num{
+  width:84px;height:84px;border-radius:50%;background:var(--parchment);border:2px solid var(--teal);
+  display:grid;place-items:center;font-family:var(--serif);font-size:2.1rem;color:var(--teal);margin-bottom:24px;
+  box-shadow:0 0 0 8px var(--parchment);position:relative;
+}
+.step .num::after{counter-increment:step;content:"0" counter(step)}
+.step:nth-child(1) .num{border-color:var(--terracotta);color:var(--terracotta)}
+.step:nth-child(2) .num{border-color:var(--olive);color:var(--olive-deep)}
+.step:nth-child(3) .num{border-color:var(--marigold-deep);color:var(--marigold-deep)}
+.step:nth-child(4) .num{border-color:var(--teal);color:var(--teal)}
+.step h4{font-size:1.32rem;margin-bottom:10px}
+.step p{font-size:.95rem;color:var(--ink-soft)}
+
+/* ---------- compass ---------- */
+.compass{background:var(--teal-deep);color:var(--parchment);position:relative;overflow:hidden}
+.compass .eyebrow{color:var(--marigold)}
+.compass .eyebrow::before,.compass .eyebrow.center::after{background:var(--marigold)}
+.compass .section-head h2{color:var(--parchment)}
+.compass .section-head .lead{color:rgba(244,236,218,.72)}
+.tenets{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.tenet{
+  border:1px solid rgba(244,236,218,.16);border-radius:var(--r);padding:30px 22px;
+  background:linear-gradient(180deg,rgba(244,236,218,.05),rgba(244,236,218,0));
+  transition:transform .35s,background .35s,border-color .35s;
+}
+.tenet:hover{transform:translateY(-7px);background:rgba(244,236,218,.09);border-color:rgba(221,160,46,.5)}
+.tenet .n{font-family:var(--serif);font-size:.95rem;color:var(--marigold);margin-bottom:18px;display:block}
+.tenet h4{font-family:var(--serif);font-style:italic;font-size:1.55rem;color:var(--parchment);margin-bottom:4px;line-height:1.1}
+.tenet .mean{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-bottom:16px;display:block}
+.tenet p{font-size:.9rem;color:rgba(244,236,218,.74);line-height:1.55}
+
+/* ---------- hearts (founders) ---------- */
+.hearts-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.founder{
+  background:rgba(255,255,255,.5);border:1px solid var(--line-soft);border-radius:24px;overflow:hidden;
+  display:grid;grid-template-columns:auto 1fr;transition:box-shadow .35s,transform .35s;
+}
+.founder:hover{box-shadow:var(--shadow-lift);transform:translateY(-4px)}
+.founder .photo{width:170px;position:relative;overflow:hidden;background:var(--teal-deep)}
+.founder .photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.02)}
+.founder .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,transparent 50%,rgba(27,56,60,.35))}
+.founder .info{padding:30px 28px}
+.founder .role{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px}
+.founder h3{font-size:1.9rem;margin-bottom:14px}
+.founder .pull{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--teal);line-height:1.4;margin-bottom:14px}
+.founder p{font-size:.93rem;color:var(--ink-soft);line-height:1.55}
+.founder .creed{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);font-family:var(--serif);font-size:.95rem;color:var(--ink)}
+
+/* ---------- testimonials / stories ---------- */
+.stories{background:var(--parchment-3)}
+.stories-cta{display:flex;justify-content:center;margin-top:48px}
+.story-wall{columns:3 320px;column-gap:24px}
+.story{
+  break-inside:avoid;margin-bottom:24px;background:var(--parchment);
+  border:1px solid var(--line-soft);border-radius:18px;padding:28px 26px 24px;position:relative;
+  box-shadow:0 1px 2px rgba(27,56,60,.04),0 14px 30px -24px rgba(27,56,60,.4);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.story:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+.story .qmark{font-family:var(--serif);font-size:3.4rem;line-height:.6;color:var(--terracotta);opacity:.32;display:block;height:.5em}
+.story .stars{color:var(--marigold);font-size:.9rem;letter-spacing:.12em;margin:8px 0 14px}
+.story blockquote{font-family:var(--serif);font-size:1.04rem;line-height:1.5;color:var(--ink);font-style:italic}
+.story .who{display:flex;align-items:center;gap:13px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line-soft)}
+.story .ava{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-family:var(--serif);font-size:1.1rem;color:var(--parchment);background:var(--teal)}
+.story:nth-child(3n+2) .ava{background:var(--olive-deep)}
+.story:nth-child(3n) .ava{background:var(--terracotta)}
+.story:nth-child(3n+2) .qmark{color:var(--olive)}
+.story:nth-child(3n) .qmark{color:var(--marigold)}
+.story .who b{display:block;font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--ink);line-height:1.2}
+.story .who span{font-size:.8rem;color:var(--ink-faint);letter-spacing:.02em}
+@media (max-width:680px){.story-wall{columns:1}}
+
+/* ---------- purpose / ikigai ---------- */
+.purpose{background:var(--parchment-2);text-align:center}
+.purpose .big{
+  font-family:var(--serif);font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:1.22;max-width:18ch;
+  margin:0 auto 28px;letter-spacing:-.02em;
+}
+.purpose .big em{font-style:italic;color:var(--terracotta)}
+.purpose .note{max-width:62ch;margin-inline:auto;color:var(--ink-soft)}
+.purpose .note .star{color:var(--marigold)}
+.ikigai-card{
+  display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin-top:36px;
+  background:var(--teal);color:var(--parchment);padding:24px 40px;border-radius:18px;box-shadow:var(--shadow-lift);
+}
+.ikigai-card .jp{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--marigold)}
+.ikigai-card .en{font-size:.9rem;letter-spacing:.04em;color:rgba(244,236,218,.85)}
+
+/* ---------- faq ---------- */
+.faq-list{max-width:840px;margin-inline:auto;display:grid;gap:14px}
+.faq{
+  background:rgba(255,255,255,.5);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;
+  transition:box-shadow .3s,border-color .3s;
+}
+.faq[open]{box-shadow:var(--shadow);border-color:var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:22px 26px;display:flex;align-items:center;gap:18px;
+  font-family:var(--serif);font-size:1.18rem;color:var(--ink);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .qn{font-size:.9rem;color:var(--terracotta);font-weight:500;flex-shrink:0;min-width:26px}
+.faq summary .plus{margin-left:auto;flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s;position:relative}
+.faq summary .plus::before,.faq summary .plus::after{content:"";position:absolute;background:var(--teal);border-radius:2px}
+.faq summary .plus::before{width:13px;height:1.5px}
+.faq summary .plus::after{width:1.5px;height:13px;transition:transform .3s}
+.faq[open] summary .plus{background:var(--teal);border-color:var(--teal)}
+.faq[open] summary .plus::before,.faq[open] summary .plus::after{background:var(--parchment)}
+.faq[open] summary .plus::after{transform:scaleY(0)}
+.faq .ans{padding:0 26px 24px 70px;color:var(--ink-soft);font-size:.98rem;line-height:1.6}
+.faq .ans strong{color:var(--ink)}
+
+/* ---------- contact / cta ---------- */
+.cta{background:var(--teal);color:var(--parchment);position:relative;overflow:hidden;text-align:center}
+.cta .sprig{color:var(--olive);opacity:.22}
+.cta .eyebrow{color:var(--marigold)}
+.cta .eyebrow::before,.cta .eyebrow.center::after{background:var(--marigold)}
+.cta h2{font-size:clamp(2.2rem,5vw,4rem);color:var(--parchment);margin:20px auto 16px;max-width:16ch}
+.cta h2 em{font-style:italic;color:var(--marigold)}
+.cta p{margin-inline:auto;color:rgba(244,236,218,.82);max-width:54ch;margin-bottom:14px}
+.cta .phone{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.2rem);color:var(--parchment);letter-spacing:.01em;margin:18px 0 26px;display:inline-block}
+.cta .phone:hover{color:var(--marigold)}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta .btn-primary{background:var(--marigold);color:var(--teal-ink)}
+.cta .btn-primary:hover{background:#e8af45}
+.cta .btn-ghost{border-color:rgba(244,236,218,.4);color:var(--parchment);background:transparent}
+.cta .btn-ghost:hover{border-color:var(--parchment);color:var(--parchment)}
+.cta .reassure{margin:30px auto 0;font-size:.86rem;color:rgba(244,236,218,.65);display:flex;gap:9px;align-items:flex-start;justify-content:center;max-width:44ch;line-height:1.5;text-align:center}
+.cta .reassure svg{flex:none;color:var(--marigold);margin-top:2px}
+
+/* ---------- footer ---------- */
+.foot{background:var(--teal-ink);color:rgba(244,236,218,.7);padding:64px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.foot-grid>*{min-width:0}
+.foot ul a{overflow-wrap:anywhere}
+.foot .brand-name{color:var(--parchment)}
+.foot-about{max-width:34ch;font-size:.92rem;margin-top:20px;color:rgba(244,236,218,.6)}
+.foot h5{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--marigold);margin-bottom:18px}
+.foot ul{list-style:none;display:grid;gap:11px}
+.foot ul a{font-size:.93rem;transition:color .2s}
+.foot ul a:hover{color:var(--parchment)}
+.foot-bottom{border-top:1px solid rgba(244,236,218,.12);padding-top:24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.84rem;color:rgba(244,236,218,.5)}
+.foot-social{display:flex;gap:12px}
+.foot-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(244,236,218,.2);display:grid;place-items:center;transition:.25s}
+.foot-social a:hover{background:var(--marigold);color:var(--teal-ink);border-color:var(--marigold)}
+.foot-social svg{width:18px;height:18px}
+
+/* ---------- whatsapp float ---------- */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:90;width:62px;height:62px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.6);
+  transition:transform .3s;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px;color:#fff}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .values{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .tenets{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:36px 24px}
+  .steps::before{display:none}
+}
+@media (max-width:900px){
+  .nav,.head-cta .btn{display:none}
+  .nav-toggle{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:50px}
+  .hero .medallion{order:-1;max-width:340px}
+  .flagship{grid-template-columns:1fr}
+  .flagship .visual{min-height:260px;order:-1}
+  .hearts-grid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  body{font-size:17px}
+  .hero{padding-top:120px}
+  .hero .sprig{display:none}
+  .hero h1{font-size:clamp(2rem,8.6vw,2.9rem)}
+  .hero .lead,.hero .sub{max-width:none}
+  .hero-cta{width:100%}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center}
+  .medallion{max-width:300px}
+  .medallion .float{font-size:.76rem;padding:9px 13px}
+  .medallion .float.f1{right:0}
+  .medallion .float.f2{left:0}
+  .values,.svc-grid,.tenets,.steps{grid-template-columns:1fr}
+  .founder{grid-template-columns:1fr}
+  .founder .photo{width:100%;height:340px}
+  .founder .photo img{object-position:center 18%}
+  .hero-trust{gap:18px}
+  .hero-trust .div{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .foot-about{grid-column:1/-1}
+  .btn{font-size:.95rem;padding:.9em 1.4em}
+  .strip-track span{font-size:1.2rem;padding:14px 22px}
+}
+
+/* mobile menu panel */
+.mobile-menu{
+  position:fixed;inset:0;z-index:99;background:var(--parchment);padding:90px var(--gutter) 40px;
+  display:flex;flex-direction:column;gap:6px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);
+  visibility:hidden;
+}
+.mobile-menu.open{transform:none;visibility:visible}
+.mobile-menu a{font-family:var(--serif);font-size:1.7rem;padding:14px 0;border-bottom:1px solid var(--line-soft);color:var(--ink)}
+.mobile-menu .btn{margin-top:24px;justify-content:center}
+.mobile-menu.open ~ .site-head{}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head" id="head">
+  <div class="wrap head-inner">
+    <a href="#top" class="brand" aria-label="Accompany home">
+      <span class="brand-badge"><img src="images/logo.webp" alt="Accompany logo" /></span>
+      <span class="brand-name">Accompany<small>A company in need, indeed</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#why">Why Us</a>
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#compass">Our Compass</a>
+      <a href="#hearts">The Hearts</a>
+      <a href="#stories">Stories</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <div class="head-cta">
+      <a href="tel:+917339339323" class="btn btn-teal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Us
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#why">Why Us</a>
+  <a href="#services">Services</a>
+  <a href="#how">How It Works</a>
+  <a href="#compass">Our Guiding Compass</a>
+  <a href="#hearts">The Hearts of Accompany</a>
+  <a href="#stories">Hearts We've Touched</a>
+  <a href="#faq">FAQs</a>
+  <a href="tel:+917339339323" class="btn btn-primary">Call +91 73393 39323</a>
+</div>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <svg class="sprig" style="top:5%;left:-48px;width:120px" viewBox="0 0 120 240" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M60 240V20"/><path d="M60 60c-26 0-40-16-44-40 26 0 40 14 44 40zM60 60c26 0 40-16 44-40-26 0-40 14-44 40zM60 110c-26 0-40-16-44-40 26 0 40 14 44 40zM60 110c26 0 40-16 44-40-26 0-40 14-44 40zM60 160c-26 0-40-16-44-40 26 0 40 14 44 40zM60 160c26 0 40-16 44-40-26 0-40 14-44 40z"/></svg>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow hero-tag reveal">Namma Chennai · Since 2021</span>
+      <h1 class="reveal d1">A helping hand when <span class="accent">family</span> is far away</h1>
+      <p class="lead reveal d2">Accompany is Chennai's dedicated companion service for senior citizens — trusted <em>Sakhas &amp; Sakhis</em> who travel with them, sit with them, and never look at their watch.</p>
+      <p class="sub reveal d2">Real Visits. Real Smiles. Real Sambandh.</p>
+      <div class="hero-cta reveal d3">
+        <a href="https://wa.me/917339339323?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Sakha%20%2F%20Sakhi%20for%20my%20loved%20one." class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.59 5.391l-.999 3.648 3.998-1.05z"/></svg>
+          Book on WhatsApp
+        </a>
+        <a href="#services" class="btn btn-ghost">Explore our services →</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <div class="t"><b>5+</b><span>Years walking<br>beside elders</span></div>
+        <div class="div"></div>
+        <div class="t"><b>1:1</b><span>Dedicated Sakha,<br>home to home</span></div>
+        <div class="div"></div>
+        <div class="t"><b>2 AM</b><span>A human answers,<br>not voicemail</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="medallion">
+        <div class="ring"></div>
+        <img src="images/logo.webp" alt="Illustration of Accompany — a family with their elders and luggage, ready to travel together" />
+        <div class="float f1"><span class="dot"></span>Live location shared</div>
+        <div class="float f2"><span class="dot" style="background:var(--terracotta)"></span>“Reached home safely ❤️”</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Temple visits</span><span>Tirth Yatras</span><span>Doctor consultations</span><span>Kutcheri &amp; dance dramas</span><span>Beach sunrises</span><span>Filter coffee conversations</span>
+    <span>Temple visits</span><span>Tirth Yatras</span><span>Doctor consultations</span><span>Kutcheri &amp; dance dramas</span><span>Beach sunrises</span><span>Filter coffee conversations</span>
+  </div>
+</div>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto section">
+  <svg class="sprig" style="top:-20px;right:-20px;width:240px" viewBox="0 0 120 240" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M60 240V20"/><path d="M60 60c-26 0-40-16-44-40 26 0 40 14 44 40zM60 60c26 0 40-16 44-40-26 0-40 14-44 40zM60 110c-26 0-40-16-44-40 26 0 40 14 44 40zM60 110c26 0 40-16 44-40-26 0-40 14-44 40zM60 160c-26 0-40-16-44-40 26 0 40 14 44 40zM60 160c26 0 40-16 44-40-26 0-40 14-44 40z"/></svg>
+  <div class="wrap manifesto-inner">
+    <span class="eyebrow center reveal">Who we are</span>
+    <h2 class="reveal d1">We are not <span class="x">caregivers</span>. We are not <span class="x">cab drivers</span>.<br>We are <em>companions</em>.</h2>
+    <p class="tagline reveal d2"><b>Thoughtful. Trustworthy. Present.</b> &nbsp;The friend who says <em>“I'll come with you.”</em> &nbsp;The daughter who holds your hand on a temple step. The grandson who waits patiently while you finish shopping.</p>
+  </div>
+</section>
+
+<!-- ============ VALUE PROPOSITION ============ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Our Value Proposition</span>
+      <h2 class="reveal d1">Why families across oceans <span class="h-script">choose Accompany</span></h2>
+      <p class="lead reveal d2">Think of us as your extended family member — available when you need someone by your loved one's side.</p>
+    </div>
+    <div class="values">
+      <article class="vcard reveal" style="--accent:var(--terracotta)">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Sakhas &amp; Sakhis</h3>
+        <p>Trained in senior sensitivity, safety, and emotional presence. There is no rush — they don't look at their watches.</p>
+      </article>
+      <article class="vcard reveal d1" style="--accent:var(--olive)">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Verified &amp; Trusted</h3>
+        <p>Background-checked companions. Live location sharing with family. Post-visit updates and pictures filled with memories.</p>
+      </article>
+      <article class="vcard reveal d2" style="--accent:var(--marigold-deep)">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <h3>Flexible &amp; Personal</h3>
+        <p>One-time need or a weekly routine — it's your call. We match a Sakha or Sakhi to your personality, interests and comfort.</p>
+      </article>
+      <article class="vcard reveal d3" style="--accent:var(--teal)">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Beyond Pick &amp; Drop</h3>
+        <p>We don't just pick and drop. We stay. We engage. In your taxi, by your side in the queue, holding your arm where you need it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Our Services · What We Do</span>
+      <h2 class="reveal d1">From a Kashi Yatra to <span class="h-script">filter coffee</span> at home</h2>
+      <p class="lead reveal d2">Travel is our flagship. But life doesn't pause between big yatras — so we have everyday companionship covered too.</p>
+    </div>
+
+    <!-- flagship: travel -->
+    <div class="flagship reveal d1">
+      <div class="copy">
+        <span class="badge">✦ Flagship · Travel</span>
+        <h3>1:1 Accompany Yatra</h3>
+        <p>Custom itineraries curated for senior citizens — who love to travel on their own dates, at their own pace, with undivided attention. Kashi or your Kuladeivam, Ganga Ghat or Govardhan, Ayodhya or Annamalaiyaar.</p>
+        <ul>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span><span><b>Totally customized.</b> You choose the place, dates and duration. One temple per day? Done. 5 AM dharshan, then afternoon rest? Done.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span><span><b>One dedicated Sakha / Sakhi</b> travels home to home — tickets, hotels, food, dharshan queues, meds, wheelchair, a hand whenever you need.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span><span><b>Comfort first.</b> Senior-friendly hotels, ground-floor rooms, healthy diet, extra rest days. Your health guides the itinerary.</span></li>
+        </ul>
+        <a href="https://wa.me/917339339323?text=Hi%2C%20I%27d%20like%20a%20free%20consultation%20for%20a%201%3A1%20Accompany%20Yatra." class="btn btn-primary">Plan their next trip — free consult</a>
+      </div>
+      <div class="visual">
+        <img src="images/lotus.webp" alt="A senior couple enjoying a temple yatra with their companion" />
+        <p class="quote">“If your heart wants to go, we wanna go.”</p>
+      </div>
+    </div>
+
+    <!-- daily companionship grid -->
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <span class="emoji">🩺</span>
+        <span class="kicker">Health &amp; Wellness</span>
+        <h4>Care, Noted</h4>
+        <ul><li>Planned doctor consultations</li><li>Periodic health check-ups</li><li>Laboratory tests</li></ul>
+        <p>Home to consultation to pharmacy to home — with notes taken, so you understand every prescription.</p>
+      </article>
+      <article class="svc reveal d1">
+        <span class="emoji">🛕</span>
+        <span class="kicker">Social &amp; Cultural</span>
+        <h4>Joy, Shared</h4>
+        <ul><li>Temple visits &amp; dharshan</li><li>Music kutcheri &amp; dance drama</li><li>Art &amp; photography exhibitions</li></ul>
+        <p>Your Sakha handles the crowd, the queue and the prasadam. You focus on prayer 🙏.</p>
+      </article>
+      <article class="svc reveal d2">
+        <span class="emoji">🌿</span>
+        <span class="kicker">Lifestyle &amp; Leisure</span>
+        <h4>Life, Lived</h4>
+        <ul><li>Nature walks</li><li>Beach visits for sunrise</li><li>Lunch, dinner, movie &amp; shopping</li></ul>
+        <p>Because companionship is not just for needs — it's for joy.</p>
+      </article>
+      <article class="svc reveal d3">
+        <span class="emoji">☕</span>
+        <span class="kicker">Home Alone</span>
+        <h4>Presence, Felt</h4>
+        <ul><li>Tea-time company</li><li>Book reading &amp; board games</li><li>No agenda except presence</li></ul>
+        <p>Let's bring back the child's innocence 🧸.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow center reveal">How It Works</span>
+      <h2 class="reveal d1">Book in four simple steps</h2>
+      <p class="lead reveal d2">No apps. No forms. No tech headaches. Just WhatsApp or call us.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num"></div><h4>Message or call us</h4><p>Save +91 73393 39323. Tell us what you need — a doctor visit, an airport pickup, or just someone to sit with Aunty for an evening. We reply within 30 minutes.</p></div>
+      <div class="step reveal d1"><div class="num"></div><h4>No scrolling of profiles</h4><p>We hand-pick a Sakha or Sakhi based on your loved one's personality, interests and language. You'll see their bio and trust badges before the visit.</p></div>
+      <div class="step reveal d2"><div class="num"></div><h4>For travel &amp; outings</h4><p>Your companion visits home first, meets your elders, video-calls you, and plans the route, breaks, medicines and meals — so everyone feels safe before stepping out.</p></div>
+      <div class="step reveal d3"><div class="num"></div><h4>Confirm &amp; relax</h4><p>We lock the date and share live location. After the experience, you get a short update — <em>“Reached home safely. Amma enjoyed the concert”</em> — with a photo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUIDING COMPASS ============ -->
+<section class="section compass" id="compass">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow center reveal">Sakha Sakhi Dharma</span>
+      <h2 class="reveal d1">Our Guiding Compass</h2>
+      <p class="lead reveal d2">Five tenets that guide every action — because trust takes time, and it isn't built on apps.</p>
+    </div>
+    <div class="tenets">
+      <article class="tenet reveal"><span class="n">① </span><h4>Upasthiti</h4><span class="mean">Presence</span><p>We're <em>with</em> them, not on a phone or with a bigger group. When Amma needs a hand on a temple step, a Sakhi's hand is already hovering.</p></article>
+      <article class="tenet reveal d1"><span class="n">② </span><h4>Dhairya</h4><span class="mean">Patience</span><p>We match their pace. One temple is enough if that's their pace. We don't “cover” yatras — we live them.</p></article>
+      <article class="tenet reveal d2"><span class="n">③ </span><h4>Maryada</h4><span class="mean">Dignity</span><p>Zero tolerance for inappropriate conduct. Absolute financial boundaries. What happens on yatra, stays on yatra.</p></article>
+      <article class="tenet reveal d3"><span class="n">④ </span><h4>Suraksha</h4><span class="mean">Safety</span><p>The #1 priority. We pre-walk every route and sleep next door during travel. At 2 AM, a human answers — not voicemail.</p></article>
+      <article class="tenet reveal d4"><span class="n">⑤ </span><h4>Sambandh</h4><span class="mean">Relationship</span><p>We call your parent by name. We remember the filter coffee, no sugar. We send the one photo that matters: them, smiling.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE HEARTS (FOUNDERS) ============ -->
+<section class="section" id="hearts">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow center reveal">The Hearts of Accompany ❤️</span>
+      <h2 class="reveal d1">Venky &amp; Suhasini</h2>
+      <p class="lead reveal d2">“We didn't start a company. We extended our family.”</p>
+    </div>
+    <div class="hearts-grid">
+      <article class="founder reveal">
+        <div class="photo"><img src="images/suhasini_maami.webp" alt="Suhasini, co-founder of Accompany" /></div>
+        <div class="info">
+          <div class="role">Co-founder · Pratam Sakhi</div>
+          <h3>Suhasini</h3>
+          <p class="pull">“Patience, calm and care — that's what seniors feel within minutes of meeting Suhasini.”</p>
+          <p>For five years she has personally travelled with seniors on pilgrimages across India, leisure trips and medical visits. A certified nutritionist and trained in creative arts, she ensures every experience is safe, healthy, and thoughtfully curated.</p>
+          <p class="creed">“A company in need, indeed.” ❤️</p>
+        </div>
+      </article>
+      <article class="founder reveal d1">
+        <div class="photo"><img src="images/venky.webp" alt="Venky, co-founder of Accompany" /></div>
+        <div class="info">
+          <div class="role">Co-founder · Pratam Sakha</div>
+          <h3>Venky</h3>
+          <p class="pull">“Vibrant, positive and motivating — that's what seniors feel within minutes of meeting Venky.”</p>
+          <p>A Cost Accountant and senior banker with ABN AMRO and RBS for two decades, Venky now plans every visit like a process — safe, timely, reliable — and keeps every family updated like a dashboard: clear, honest, complete.</p>
+          <p class="creed">“Giving time for someone is priceless.” ❤️</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS / STORIES ============ -->
+<section class="section stories" id="stories">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow center reveal">Hearts We've Touched ❤️</span>
+      <h2 class="reveal d1">What families say</h2>
+      <p class="lead reveal d2">Unfiltered notes from our extended family — seniors and the children who trust us with them.</p>
+    </div>
+    <div class="story-wall reveal d1">
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>You've identified a real gap in the travel industry. I had the opportunity to travel with you, and it was a wonderful experience for all of us. Everything was perfectly planned — from pick-up to drop-off.</blockquote>
+        <figcaption class="who"><span class="ava">RK</span><span><b>Rabin Kumar Sahu</b><span>Travelled with Accompany</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>From the very first day, I felt as though I was travelling with my own extended family. They are not simply itinerary planners — they are storytellers, pilgrims, explorers and hosts who pour love into every journey.</blockquote>
+        <figcaption class="who"><span class="ava">SC</span><span><b>Shalini Chandrasekaran</b><span>Maha Kumbh · Prayagraj &amp; Kashi</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>Created memories for a lifetime! A meticulously planned trip to Srisailam — a comfortable drive through the Nallamala Forest, and I touched the divine feet through the Sparsha Darshan arrangement. Everything was perfect!</blockquote>
+        <figcaption class="who"><span class="ava">PS</span><span><b>Padmavathi Sundara Rajan</b><span>Srisailam Yatra</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>I am 85 and live by myself in Chennai; all my nieces and nephews are abroad. It had long been my dream to visit Ayodhya. Venkat took care of every single detail — flights, car, even a wheelchair at the temple. A true Godsend.</blockquote>
+        <figcaption class="who"><span class="ava">Sa</span><span><b>Sakunthala</b><span>Ayodhya darshan · age 85</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>We were worried about the millions at the Mahakumbh. Venkat and Suhasini handled everything via Varanasi, with timely guidance and deeply personalized attention every step. A deeply spiritual, flawless pilgrimage.</blockquote>
+        <figcaption class="who"><span class="ava">LL</span><span><b>Latha &amp; Lakshminarayanan</b><span>Prayagraj Pilgrimage</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>I had the privilege of being accompanied to Thiruchendur, and later a trekking expedition to Ahobilam. As a senior citizen of 65 years young, everything from A–Z was taken care of meticulously. They have the heart and soul of an artist.</blockquote>
+        <figcaption class="who"><span class="ava">GA</span><span><b>Geetha Akka</b><span>Thiruchendur &amp; Ahobilam</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>Such a fantastic, thrilling experience at the Mahakumbh. When ticket booking and rooms seemed impossible, you encouraged me to join without any hesitation — despite a big group. That shows your magnanimity. God bless you both.</blockquote>
+        <figcaption class="who"><span class="ava">BM</span><span><b>Bala Mama</b><span>Mahakumbh Pilgrimage</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>How can one refuse a 10-day trip to Indore, Ujjain, Bhopal, Kanha, Khajuraho, Prayagraj &amp; Kashi with every detail taken care of? It was never just an itinerary — it was a curated experience. To this day, this trip has my heart.</blockquote>
+        <figcaption class="who"><span class="ava">RK</span><span><b>Radhika Karthik</b><span>Madhya Pradesh &amp; Kashi</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>Travelling on pilgrimage with Venky and Suha is truly a blessing. They took Amma and Bala Maami on two tours — North and South. What sets them apart is the special care they extend to seniors: comfort, safety and patience throughout.</blockquote>
+        <figcaption class="who"><span class="ava">Ka</span><span><b>Kalpana</b><span>North &amp; South Yatras</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>They go far beyond accompanying seniors to medical appointments — discussing concerns directly with physicians, organizing medications, and explaining treatment plans clearly. Seniors feel cared for, respected and supported.</blockquote>
+        <figcaption class="who"><span class="ava">Ka</span><span><b>Kalpana</b><span>Medical Companionship</span></span></figcaption>
+      </figure>
+      <figure class="story">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>My visit to Mantralayam was long overdue. Venkat made it possible through a meticulous travel plan — train tickets, accommodation and local transport. We had a beautiful dharshan of Sri Raghavendra. Thanks to Sri Venkat.</blockquote>
+        <figcaption class="who"><span class="ava">RM</span><span><b>Ravishankar Mama</b><span>Mantralayam Yatra</span></span></figcaption>
+      </figure>
+    </div>
+    <div class="stories-cta reveal">
+      <a href="https://wa.me/917339339323?text=Hi%2C%20I%27d%20like%20to%20share%20a%20review%20about%20my%20experience%20with%20Accompany." class="btn btn-teal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Leave a review
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PURPOSE / IKIGAI ============ -->
+<section class="section purpose">
+  <div class="wrap">
+    <span class="eyebrow center reveal">Our Purpose · The Ikigai of Accompany</span>
+    <p class="big reveal d1" style="margin-top:24px">Nobody should miss out on life, for <em>lack of company.</em></p>
+    <p class="note reveal d2">Growing older should mean growing richer — in experiences, conversations and joy. No senior should miss a temple visit, a family wedding, or a sunrise by the beach simply because there's no one to go with. <span class="star">★</span></p>
+    <div class="ikigai-card reveal d2">
+      <span class="jp">Ikigai — a reason for giving</span>
+      <span class="en">Restoring independence through companionship — serving Chennai since 2021</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow center reveal">Family Accompany Questions</span>
+      <h2 class="reveal d1">Before you ask, we thought of it</h2>
+    </div>
+    <div class="faq-list reveal d1">
+      <details class="faq" open>
+        <summary><span class="qn">01</span>What exactly is Accompany?<span class="plus"></span></summary>
+        <div class="ans">Accompany provides trusted, background-verified <strong>Sakhas &amp; Sakhis</strong> for senior citizens. We're not a cab service or medical caregivers. We're the friends who accompany you during travel, for doctor visits, temples, the beach, kutcheris, morning walks, shopping — or just for coffee. We stay, engage, and ensure you're safe and comfortable.</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">02</span>What is a Sakha / Sakhi?<span class="plus"></span></summary>
+        <div class="ans">Not a volunteer. Not a caregiver. A <strong>companion</strong>. In our tradition a Sakha is Krishna to Arjuna — not a servant, but a friend who walks with you and stays even when the path is hard. A Sakhi is the friend who knows you need water before you ask. Each one is guided by our five tenets: Presence, Patience, Dignity, Safety, and Relationship.</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">03</span>Which cities do you operate in?<span class="plus"></span></summary>
+        <div class="ans">We're starting from <strong>Namma Chennai</strong> with pan-city coverage. If you love this thought and like our services, spread the word — we will eventually cater to other cities as well.</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">04</span>Can my son or daughter book for me from abroad?<span class="plus"></span></summary>
+        <div class="ans">Yes. Bookings can be made by senior citizens themselves, by their children living abroad or in another city, or by a family friend or neighbour. Just call or WhatsApp <strong>+91 73393 39323</strong>.</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">05</span>How far in advance should I book?<span class="plus"></span></summary>
+        <div class="ans">For planned visits like doctor appointments, <strong>24–48 hours</strong> is ideal. For emergencies or same-day needs, call our dedicated hotline and we'll do our best based on the availability of a Sakha / Sakhi.</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">06</span>Can I book the same Sakha / Sakhi every week?<span class="plus"></span></summary>
+        <div class="ans">Absolutely. Many seniors prefer building a rapport. If your chosen Sakha / Sakhi is free, you can block recurring slots — for example, every Tuesday morning.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / CONTACT ============ -->
+<section class="section cta" id="contact">
+  <svg class="sprig" style="bottom:-30px;left:-20px;width:220px;transform:scaleX(-1)" viewBox="0 0 120 240" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M60 240V20"/><path d="M60 60c-26 0-40-16-44-40 26 0 40 14 44 40zM60 60c26 0 40-16 44-40-26 0-40 14-44 40zM60 110c-26 0-40-16-44-40 26 0 40 14 44 40zM60 110c26 0 40-16 44-40-26 0-40 14-44 40zM60 160c-26 0-40-16-44-40 26 0 40 14 44 40zM60 160c26 0 40-16 44-40-26 0-40 14-44 40z"/></svg>
+  <div class="wrap">
+    <span class="eyebrow center reveal">Independence, secured in minutes</span>
+    <h2 class="reveal d1">Let's plan their next day out, <em>with them</em>.</h2>
+    <p class="reveal d2">One call is all it takes. Tell us what your loved one needs, and we'll bring a friend to their door.</p>
+    <a href="tel:+917339339323" class="phone reveal d2">+91 73393 39323</a>
+    <div class="cta-btns reveal d3">
+      <a href="https://wa.me/917339339323?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Sakha%20%2F%20Sakhi%20for%20my%20loved%20one." class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.59 5.391l-.999 3.648 3.998-1.05z"/></svg>
+        Book on WhatsApp
+      </a>
+      <a href="mailto:hello.accompany@gmail.com" class="btn btn-ghost">Email us</a>
+    </div>
+    <p class="reassure reveal d3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Background-verified · Live location shared · A human answers, day or night</span></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="brand-badge"><img src="images/logo.webp" alt="Accompany logo" /></span>
+          <span class="brand-name" style="color:var(--parchment)">Accompany</span>
+        </a>
+        <p class="foot-about">Namma Chennai's dedicated companion service for senior citizens. Real visits. Real smiles. Real Sambandh. ❤️</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#why">Why Accompany</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#compass">Guiding Compass</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Accompany</h5>
+        <ul>
+          <li><a href="#hearts">The Hearts</a></li>
+          <li><a href="#stories">Hearts We've Touched</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="https://www.instagram.com/accompanydiaries/">Accompany Diaries</a></li>
+          <li><a href="mailto:hello.accompany@gmail.com">iVolunteer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Reach Us</h5>
+        <ul>
+          <li><a href="tel:+917339339323">+91 73393 39323</a></li>
+          <li><a href="https://wa.me/917339339323">WhatsApp us</a></li>
+          <li><a href="mailto:hello.accompany@gmail.com">hello.accompany@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/accompanydiaries/">@accompanydiaries</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2021–2026 Accompany · A company in need, indeed.</span>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/accompanydiaries/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/917339339323" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.59 5.391l-.999 3.648 3.998-1.05z"/></svg></a>
+        <a href="tel:+917339339323" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- whatsapp float -->
+<a href="https://wa.me/917339339323?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Sakha%20%2F%20Sakhi%20for%20my%20loved%20one." class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.59 5.391l-.999 3.648 3.998-1.05z"/></svg>
+</a>
+
+<script>
+// header on scroll
+const head=document.getElementById('head');
+addEventListener('scroll',()=>head.classList.toggle('scrolled',scrollY>30),{passive:true});
+
+// mobile menu
+const tgl=document.getElementById('navToggle'), menu=document.getElementById('mobileMenu');
+tgl.addEventListener('click',()=>{
+  const open=menu.classList.toggle('open');
+  tgl.setAttribute('aria-expanded',open);
+  document.body.style.overflow=open?'hidden':'';
+});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  menu.classList.remove('open');tgl.setAttribute('aria-expanded',false);document.body.style.overflow='';
+}));
+
+// scroll reveal
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// FAQ: single-open accordion
+document.querySelectorAll('.faq').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){document.querySelectorAll('.faq').forEach(o=>{if(o!==d)o.open=false;});}
+  });
+});
+</script>
+</body>
+</html>
