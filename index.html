@@ -407,7 +407,7 @@ section{position:relative}
 .foot{background:var(--teal-ink);color:rgba(244,236,218,.7);padding:64px 0 30px}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
 .foot-grid>*{min-width:0}
-.foot ul a{overflow-wrap:anywhere}
+.foot ul a{overflow-wrap:break-word}
 .foot .brand-name{color:var(--parchment)}
 .foot-about{max-width:34ch;font-size:.92rem;margin-top:20px;color:rgba(244,236,218,.6)}
 .foot h5{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--marigold);margin-bottom:18px}
@@ -477,8 +477,10 @@ section{position:relative}
   .founder .photo img{object-position:center 18%}
   .hero-trust{gap:18px}
   .hero-trust .div{display:none}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
-  .foot-about{grid-column:1/-1}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px 30px}
+  .foot-grid>div:first-child{grid-column:1/-1}
+  .foot-grid>div:last-child{grid-column:1/-1}
+  .foot-about{max-width:46ch}
   .btn{font-size:.95rem;padding:.9em 1.4em}
   .strip-track span{font-size:1.2rem;padding:14px 22px}
 }
