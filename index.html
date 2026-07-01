@@ -252,9 +252,9 @@ section{position:relative}
 .flagship li b{color:var(--parchment);font-weight:600}
 .flagship li .tick{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(221,160,46,.2);color:var(--marigold);display:grid;place-items:center;margin-top:1px}
 .flagship li .tick svg{width:13px;height:13px}
-.flagship .visual{position:relative;background:radial-gradient(circle at 50% 35%,var(--teal-deep),var(--teal-ink));display:grid;place-items:center;padding:40px;min-height:320px}
-.flagship .visual img{width:80%;max-width:340px;border-radius:50%;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
-.flagship .visual .quote{position:absolute;bottom:26px;left:26px;right:26px;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--marigold);text-align:center}
+.flagship .visual{position:relative;background:radial-gradient(circle at 50% 35%,var(--teal-deep),var(--teal-ink));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:44px 40px;min-height:320px}
+.flagship .visual img{width:78%;max-width:320px;border-radius:50%;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.flagship .visual .quote{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--marigold);text-align:center;max-width:32ch}
 
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .svc{
